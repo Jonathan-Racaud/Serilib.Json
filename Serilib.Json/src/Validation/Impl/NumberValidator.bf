@@ -4,13 +4,15 @@ using Serilib.Parsers.Core;
 
 namespace Serilib.Json.Validation.Impl
 {
-	public class NumberValidator : BaseValidator
+	public class NumberValidator : BaseValidator, INumberValidator
 	{
 		private NumberParser _numberParser = new .() ~ delete _;
 		private CharParser _charParser = new .() ~ delete _;
 
-		public override bool Validate(Stream stream)
+		public bool Validate(Stream stream, bool resetPos = true)
 		{
+			let pos = stream.Position;
+
 			if (!ValidNumberPart(stream))
 				return false;
 
@@ -20,14 +22,14 @@ namespace Serilib.Json.Validation.Impl
 			if (!stream.HasData())
 			{
 				stream.Back((uint32)stream.Position);
-				return true;
+				return resetPos ? Success(stream, pos) : true;
 			}
 
 			if (!ValidScientificNotation(stream))
 				return false;
 
 			stream.Back((uint32)stream.Position);
-			return true;
+			return resetPos ? Success(stream, pos) : true;
 		}
 
 		private bool ValidNumberPart(Stream stream)

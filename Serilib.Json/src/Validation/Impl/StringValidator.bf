@@ -4,12 +4,12 @@ using Serilib.Parsers.Core;
 
 namespace Serilib.Json.Validation.Impl
 {
-	public class StringValidator: BaseValidator
+	public class StringValidator: BaseValidator, IStringValidator
 	{
 		private CharParser _charParser = new .() ~ delete _;
 		private StringParser _stringParser = new .() ~ delete _;
 
-		public override bool Validate(Stream stream)
+		public bool Validate(Stream stream, bool resetPos = true)
 		{
 			let pos = stream.Position;
 
@@ -33,7 +33,7 @@ namespace Serilib.Json.Validation.Impl
 			if (ch != '"')
 				return false;
 
-			return true;
+			return resetPos ? Success(stream, pos) : true;
 		}
 	}
 }

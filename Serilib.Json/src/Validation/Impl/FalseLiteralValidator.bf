@@ -1,23 +1,26 @@
 using System;
 using System.IO;
+using Serilib.Parsers.Core;
 
 namespace Serilib.Json.Validation.Impl
 {
-	public class FalseLiteralValidator : BaseValidator
+	public class FalseLiteralValidator : BaseValidator, IFalseLiteralValidator
 	{
 		private String _value = "false";
+		private StringParser _stringParser = new .() ~ delete _;
 
-		public override bool Validate(Stream stream)
+		public bool Validate(Stream stream, bool resetPos = true)
 		{
-			return base.Validate(stream, _value);
-		}
+			let pos = stream.Position;
 
-		public override bool Validate(Stream stream, String value)
-		{
-			if (value.Equals(_value))
-				return Validate(stream);
+			String _;
+			var isValid = _stringParser.Parse(stream, _value, out _) case .Ok;
+			delete _;
 
-			return false;
+			if (isValid)
+				return resetPos ? Success(stream, pos) : true;
+			else
+				return false;
 		}
 	}
 }
