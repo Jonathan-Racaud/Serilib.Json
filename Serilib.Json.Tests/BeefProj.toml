@@ -1,0 +1,7 @@
+FileVersion = 1
+Dependencies = {corlib = "*", corlib = "*", "Serilib.Json" = "*"}
+
+[Project]
+Name = "Serilib.Json.Tests"
+TargetType = "BeefTest"
+StartupObject = "Serilib.Json.Tests.Program"
