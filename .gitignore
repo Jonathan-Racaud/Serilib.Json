@@ -1,3 +1,10 @@
+# Ignore from the current folder
+build/
+recovery/
+BeefSpace_User.toml
+BeefSpace.toml
+
+# Ignore from included folders
 */build/**
 */recovery/**
 */BeefSpace_User.toml

@@ -1,5 +1,5 @@
 FileVersion = 1
-Dependencies = {corlib = "*", corlib = "*", corlib = "*", "Serilib.Json" = "*"}
+Dependencies = {corlib = "*", corlib = "*", corlib = "*", "Serilib.Json" = "*", corlib = "*"}
 
 [Project]
 Name = "Serilib.Json.Tests"
@@ -9,31 +9,4 @@ StartupObject = "Serilib.Json.Tests.Program"
 [[ProjectFolder.Items]]
 Type = "Folder"
 Name = "Validation"
-
-[[ProjectFolder.Items.Items]]
-Type = "Folder"
-Name = "Mock"
-
-[[ProjectFolder.Items.Items.Items]]
-Type = "IgnoreSource"
-Name = "ArrayValidatorMock.bf"
-
-[[ProjectFolder.Items.Items.Items]]
-Type = "IgnoreSource"
-Name = "StringValidatorMock.bf"
-
-[[ProjectFolder.Items.Items.Items]]
-Type = "IgnoreSource"
-Name = "NumberValidatorMock.bf"
-
-[[ProjectFolder.Items.Items.Items]]
-Type = "IgnoreSource"
-Name = "TrueLiteralValidatorMock.bf"
-
-[[ProjectFolder.Items.Items.Items]]
-Type = "IgnoreSource"
-Name = "FalseLiteralValidatorMock.bf"
-
-[[ProjectFolder.Items.Items.Items]]
-Type = "IgnoreSource"
-Name = "NullLiteralValidatorMock.bf"
+AutoInclude = true

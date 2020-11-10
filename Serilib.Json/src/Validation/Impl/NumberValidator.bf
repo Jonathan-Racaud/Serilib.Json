@@ -21,14 +21,12 @@ namespace Serilib.Json.Validation.Impl
 
 			if (!stream.HasData())
 			{
-				stream.Back((uint32)stream.Position);
 				return resetPos ? Success(stream, pos) : true;
 			}
 
 			if (!ValidScientificNotation(stream))
 				return false;
 
-			stream.Back((uint32)stream.Position);
 			return resetPos ? Success(stream, pos) : true;
 		}
 

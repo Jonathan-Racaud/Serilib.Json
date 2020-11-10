@@ -17,18 +17,19 @@ namespace Serilib.Json.Validation.Impl
 			if (_charParser.Parse(stream, '"', out ch) case .Err)
 				return false;
 
-			String str;
+			/*String str;
 			if (_stringParser.Any(stream, out str) case .Err)
-				return false;
+				return false;*/
 
-			stream.Position = pos;
+			while ((_charParser.Any(stream, out ch) case .Ok) && (ch != '"'))
+				continue;
 
-			if (str.Length > 1)
+			/*if (str.Length > 1)
 				ch = str[str.Length - 1];
 			else
 				ch = default;
 
-			delete str;
+			delete str;*/
 
 			if (ch != '"')
 				return false;

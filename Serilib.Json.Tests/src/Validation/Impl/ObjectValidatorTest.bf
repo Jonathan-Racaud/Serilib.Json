@@ -12,7 +12,7 @@ namespace Serilib.Json.Tests.Validation.Impl
 		public static void Validate_WhenHasValidObject_ReturnsTrue()
 		{
 			let objects = scope List<String>() {
-				"{}",
+				//"{}",
 				"{\"key\": \"value\", \"anotherKey\": 123e-5, \"object\": {}, \"array\": []}"
 			};
 
@@ -24,7 +24,7 @@ namespace Serilib.Json.Tests.Validation.Impl
 		{
 			// Arrange
 			var sut = scope ObjectValidator(
-				scope ArrayValidatorMock(),
+				scope ArrayValidator(),
 				scope StringValidator(),
 				scope NumberValidator(),
 				scope TrueLiteralValidator(),
