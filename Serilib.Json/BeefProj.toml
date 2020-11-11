@@ -1,6 +1,5 @@
 FileVersion = 1
-Dependencies = {corlib = "*", Serilib = "*"}
+Dependencies = {corlib = "*", "Serilib.Core" = "*"}
 
 [Project]
 Name = "Serilib.Json"
-TargetType = "BeefLib"

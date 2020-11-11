@@ -1,6 +1,6 @@
 using System.IO;
 using System;
-using Serilib.Parsers.Core;
+using Serilib.Core.Parsers.Impl;
 
 namespace Serilib.Json.Validation.Impl
 {
