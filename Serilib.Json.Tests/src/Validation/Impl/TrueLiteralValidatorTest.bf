@@ -21,6 +21,7 @@ namespace Serilib.Json.Tests.Validation.Impl
 
 			// Assert
 			Test.Assert(result == true);
+			Test.Assert(stream.Position == 0);
 		}
 
 		[Test]

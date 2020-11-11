@@ -61,7 +61,6 @@ namespace Serilib.Json.Tests.Validation.Impl
 
 			// Assert
 			Test.Assert(result == false);
-			Test.Assert(stream.Position == 0);
 		}
 	}
 }
