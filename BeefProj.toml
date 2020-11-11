@@ -1,0 +1,6 @@
+FileVersion = 1
+Dependencies = {corlib = "*", Serilib = "*"}
+
+[Project]
+Name = "Serilib.Json"
+StartupObject = "Serilib.Json.Program"

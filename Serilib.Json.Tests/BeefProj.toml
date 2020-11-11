@@ -1,0 +1,12 @@
+FileVersion = 1
+Dependencies = {corlib = "*", corlib = "*", corlib = "*", "Serilib.Json" = "*", corlib = "*"}
+
+[Project]
+Name = "Serilib.Json.Tests"
+TargetType = "BeefTest"
+StartupObject = "Serilib.Json.Tests.Program"
+
+[[ProjectFolder.Items]]
+Type = "Folder"
+Name = "Validation"
+AutoInclude = true
