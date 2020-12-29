@@ -12,7 +12,7 @@ namespace Serilib.Json.Tests.Validation.Impl
 		{
 			let strings = scope List<String>() {
 				"\"Hello world, this is a valid JSON String\"",
-				"\"u{32}Hello4896548*/-/[]\\[;\',/.\\n\r\twqw\""
+				"\"u{32}Hello4896\\\"548*/-/[];\',/.\n\r\twqw\""
 			};
 
 			for (let str in strings)
@@ -41,7 +41,8 @@ namespace Serilib.Json.Tests.Validation.Impl
 			let strings = scope List<String>() {
 				"",
 				"\"",
-				"\"duihwehdwe"
+				"\"duihwehdwe",
+				"\"u{32}Hello4896\\\"548*/-/[]\\[;\',/.\\n\r\twqw\""
 			};
 
 			for (let str in strings)

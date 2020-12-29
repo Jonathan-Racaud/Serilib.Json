@@ -5,19 +5,11 @@ using Serilib.Core.Parsers.Impl;
 
 namespace Serilib.Json.Parser.Impl
 {
-	public class JsonNullParser : IJsonNullParser
+	public class JsonNullParser : BaseLiteralParser
 	{
-		private String _value = "null";
-		private StringParser _stringParser = new .() ~ delete _;
-
-		public Result<void, ParseErrors> Parse(Stream stream)
+		public this()
 		{
-			String str;
-			if (_stringParser.Parse(stream, _value, out str) case .Err)
-				return .Err(.ValueNotFound);
-			delete str;
-
-			return .Ok;
+			_value = "null";
 		}
 	}
 }
